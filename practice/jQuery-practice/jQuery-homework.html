@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <title>jQuery homework</title>
+
+    <style>
+        p.q3 {
+            margin: 8px;
+            font-size: 16px;
+        }
+        .w3r_font_color{
+            color: red;
+        }
+        p#q11{
+            background-color: #B0E0E6;
+            width: 70px;
+            border: 1px solid red;
+        }
+    </style>
+
+</head>
+<body>
+<!-------------------------------------------QUESTION 1---------------------------------------------------------------->
+
+    <h3>Question 1: Using jQuery find all textareas and all paragraphs, and them makes them a border.</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button1">Click me</button>
+    <div class="q1">
+        <p>Test paragraph for question 1</p>
+        <p>Continue testing paragraph for question 1</p>
+        <textarea>Testing textarea for question 1</textarea>
+        <textarea>Continue testing textarea question 1</textarea>
+    </div>
+    <script>
+        $('#button1').click(function() {
+            $(".q1 textarea, .q1 p").css({border: 'solid red'});
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 2---------------------------------------------------------------->
+
+    <h3>Question 2: Create a paragraph element with some text and append it to the end of the document body using jQuery</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button2">Click me</button>
+    <p>Please scroll down to the end of page to see the result (after click the button).</p>
+    <script>
+        $("#button2").click(function(){
+            $("body").append("<p>Adding some text for question 2</p>");
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 3---------------------------------------------------------------->
+
+    <h3>Question 3: Using jQuery add the class "w3r_font_color" to the last paragraph element.</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button3">Click me</button>
+    <div class="q3">
+        <p>PHP</p>
+        <p>Java</p>
+        <p>Python</p>
+        </div>
+
+    <script>
+        $("#button3").click(function(){
+            $(".q3 p:last-child").addClass("w3r_font_color");
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 4---------------------------------------------------------------->
+
+    <h3>Question 4: Using jQuery insert some HTML after all paragraphs.</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button4">Click me</button>
+    <p class="q4">jQuery Exercises</p>
+    <p class="q4">Another paragraph</p>
+    <script>
+        $("#button4").click(function(){
+            $("p.q4").after("<b><em>Solution for question 4.</em></b>")
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 5---------------------------------------------------------------->
+
+    <h3>Question 5: Insert a jQuery object after all paragraphs.</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button5">Click me</button><br>
+    <b class="q5">Solution for q5.</b>
+    <p class="q5">Here's a paragraph for testing q5.</p>
+    <p class="q5">Here's another line.</p>
+    <script>
+        $("#button5").click(function(){
+            $("p.q5").after($("b.q5"));
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 6---------------------------------------------------------------->
+
+    <h3>Question 6: Register a handler to be called when Ajax requests complete successfully.</h3>
+
+    <h3>Answer:</h3>
+
+    <p><b>Note:</b> Question 6, 7, 8 may act the same time because I use $(document) in those 3 questions</p>
+    <button id="button6">Click me</button>
+    <div class="p6"></div>
+    <p class="p6">Some text before send ajax request.</p>
+    <script>
+        $(document).ajaxSuccess(function() {
+            $( "p.p6" ).text( "Ajax requests complete successfully." );
+        });
+        $("#button6").click(function(){
+            $( "div.p6" ).load( "demo_ajax.txt" );
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 7---------------------------------------------------------------->
+
+    <h3>Question 7: Register a handler to be called when Ajax requests complete with an error.</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button7">Click me</button>
+    <div class="p7"></div>
+    <p class="p7">Some text before send ajax request.</p>
+    <script>
+        $(document).ajaxError(function() {
+            $( "p.p7" ).text( "Ajax requests complete with an error!" );
+        });
+        $("#button7").click(function(){
+            $( "div.p7" ).load( "not_exist.txt" );
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 8---------------------------------------------------------------->
+
+    <h3>Question 8: Register a handler to be called when all Ajax requests have completed.</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button8">Click me</button>
+    <div class="p8"></div>
+    <p class="p8">Some text before send ajax request.</p>
+    <script>
+        $(document).ajaxComplete(function() {
+            $( "p.p8" ).text( "Ajax requests have completed." );
+        });
+        $("#button8").click(function(){
+            $( "div.p8" ).load( "demo_ajax_2.txt" );
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 9---------------------------------------------------------------->
+
+    <h3>Question 9: Using jQuery count every element (including head, body, etc.) in the document.</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button9">Click me</button>
+    <p class="q9"></p>
+    <script>
+        $("#button9").click(function(){
+            var x = $("*").length;
+            $(".q9").text("The current total elements in the document: " + x);
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 10---------------------------------------------------------------->
+
+    <h3>Question 10: Using jQuery count all elements within a division.</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button10">Click me</button>
+    <div class="q10" style="border:solid;">
+        <div>This is a testing-purpose division.</div>
+        <p>Sample p tag.</p>
+        <p>Another sample p tag.</p>
+        <div>Small <b>div</b> in div.</div>
+    </div>
+    <p id="q10"></p>
+    <script>
+        $("#button10").click(function(){
+            var x = $("div.q10").find("*").length;
+             $("#q10").text("The current total elements in question 10's division: " + x);
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 11---------------------------------------------------------------->
+
+    <h3>Question 11: Using jQuery click the button to animate the paragraph element with a number of different properties.</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button11">Click to see the animation</button>
+    <p id="q11">jQuery</p>
+     <script>
+        $("#button11").click(function(){
+            $("#q11").animate({
+                width: "70%",
+                opacity: 0.4,
+                marginLeft: "0.6in",
+                fontSize: "3em",
+                borderWidth: "10px"
+            })
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 12---------------------------------------------------------------->
+
+    <h3>Question 12: Using jQuery find all the divisions with a name attribute that contains ‘tutorial’ and sets the background color yellow.</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button12">Click to see the effect</button>
+    <div name="tutorial">Div with name = 'tutorial'</div>
+    <div>Normal div</div>
+    <div name="tutorial">Another div with name = 'tutorial'</div>
+    <p name="tutorial">Paragraph with name = 'tutorial'.</p>
+    <script>
+        $("#button12").click(function(){
+            $("div[name='tutorial']").css({background:'yellow'});
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 13---------------------------------------------------------------->
+
+    <h3>Question 13: Scroll to the top of the page with jQuery.</h3>
+
+    <h3>Answer:</h3>
+
+    <button id="button13">Scroll to the top of the page</button>
+    <script>
+        $("#button13").click(function(){
+            $(document).scrollTop(0);
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 14---------------------------------------------------------------->
+
+    <h3>Question 14: Disable/enable the form submit button.</h3>
+
+    <h3>Answer:</h3>
+
+    <label><input type="checkbox" id="q14">I accept</label><br>
+    <button id="button14" disabled>Submit</button>
+
+    <script>
+        $("#q14").change(function() {
+            if (this.checked) {
+                $("#button14").attr("disabled", false);}
+            else {
+                $("#button14").attr("disabled", true);};
+        });
+    </script>
+
+<!-------------------------------------------QUESTION 15---------------------------------------------------------------->
+
+    <h3>Question 15: Blink text using jQuery.</h3>
+
+    <h3>Answer:</h3>
+
+    <p>jQuery <span class="q15">Exercises</span> and Solution</p>
+    <p class="q15">Blinking paragraph.</p>
+    <script>
+        function blink() {
+            $('.q15').fadeOut();
+            $('.q15').fadeIn();
+        }
+        setInterval(blink, 1000);
+    </script>
+
+    <hr>THE END OF PAGE<hr>
+
+</body>
+</html>
