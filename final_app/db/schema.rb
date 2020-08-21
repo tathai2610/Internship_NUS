@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_154535) do
+ActiveRecord::Schema.define(version: 2020_08_21_085417) do
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 2020_08_19_154535) do
     t.bigint "user_id", null: false
     t.boolean "shared", default: true
     t.index ["user_id"], name: "index_albums_on_user_id"
+  end
+
+  create_table "albums_photos", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "album_id", null: false
+    t.bigint "photo_id", null: false
   end
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -40,6 +45,8 @@ ActiveRecord::Schema.define(version: 2020_08_19_154535) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false
+    t.integer "photos_count"
+    t.integer "albums_count"
   end
 
   add_foreign_key "albums", "users"
