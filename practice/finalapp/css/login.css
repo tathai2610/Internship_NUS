@@ -1,0 +1,24 @@
+
+.btn {
+    color: white;
+    background-color: #3C5999;
+}
+.page {
+    padding-top: 5%;
+}
+.login {
+    color: #3C5999;
+}
+#user-img {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+}
+.icon {
+    width: 55px;
+    height: 55px;
+}
+
+.login-form {
+    background-color: rgb(247,247,247);
+}

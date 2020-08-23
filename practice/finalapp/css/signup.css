@@ -1,0 +1,24 @@
+
+.btn {
+    color: white;
+    background-color: #3C5999;
+}
+.page {
+    padding-top: 5%;
+}
+.signup {
+    color: #3C5999;
+}
+label {
+    margin-top:12px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.signup-form {
+    background-color: rgb(247,247,247);
+}
+.icon {
+    width: 55px;
+    height: 55px;
+}
+

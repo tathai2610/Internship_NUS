@@ -1,0 +1,48 @@
+
+.page {
+    background-color: #f2f2f2;
+}
+.avatar {
+    background-color: #3C5999;
+    color: white;
+    border-color: #3C5999;
+}
+.background-avatar {
+    background-image: url("../img/p1.jfif");
+}
+.font-size {
+    font-size: 14px;
+}
+.font-size-sm {
+    font-size: 10px;
+}
+.text-color {
+    color: #3C5999;
+}
+.likes{
+    width:15px;
+    height:15px;
+}
+
+.followed{
+  color: white;
+  background-color: rgb(231, 97, 94);
+  border-color: rgb(231, 97, 94);
+  border-width: 2px;
+}
+.follow {
+  color:  rgb(231, 97, 94);
+  background-color: white;
+  border-color: rgb(231, 97, 94);
+  border-width: 2px;
+}
+.uploader-hold {
+    width: 200px;
+    height: 200px;
+
+}
+.upload-photo {
+    width: 200px;
+    height: 200px;
+    border: 3px dashed grey;
+}
