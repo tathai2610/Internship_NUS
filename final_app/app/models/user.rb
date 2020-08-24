@@ -2,6 +2,12 @@ class User < ApplicationRecord
   has_many :albums
   has_many :photos
 
+  has_many :follower_follows, foreign_key: :followee_id, class_name: "Follow"
+  has_many :followers, through: :follower_follows, source: :follower
+
+  has_many :followee_follows, foreign_key: :follower_id, class_name: "Follow"
+  has_many :followees, through: :followee_follows, source: :followee
+
   validates :firstname, presence: true, length: {maximum: 25, message: "First name is maximum 25 characters"}
   validates :firstname, format: { with: /\A[a-zA-Z]+\z/, message: "First name should contain only letters"}
 

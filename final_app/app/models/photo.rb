@@ -1,5 +1,5 @@
 class Photo < ApplicationRecord
-  belongs_to :user, counter_cache: true
+  belongs_to :user
   has_and_belongs_to_many :albums
 
   validates :title, presence: true, length: {maximum: 140, message: "Title is maximum 140 characters"}
