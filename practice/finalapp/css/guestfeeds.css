@@ -9,6 +9,7 @@
 }
 .background-avatar {
     background-image: url("../img/p1.jfif");
+    background-repeat: repeat-x;
 }
 .font-size {
     font-size: 14px;
@@ -26,14 +27,14 @@
 
 .followed{
   color: white;
-  background-color: rgb(231, 97, 94);
-  border-color: rgb(231, 97, 94);
+  background-color: tomato;
+  border-color: tomato;
   border-width: 2px;
 }
 .follow {
-  color:  rgb(231, 97, 94);
+  color:  tomato;
   background-color: white;
-  border-color: rgb(231, 97, 94);
+  border-color: tomato;
   border-width: 2px;
 }
 .uploader-hold {
@@ -45,4 +46,19 @@
     width: 200px;
     height: 200px;
     border: 3px dashed grey;
+}
+.edit-header{
+    opacity: 0.7;
+    width: 90%;
+}
+.overflow {
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+.img-holder{
+    height: 300px;
+    width: 300px;
 }

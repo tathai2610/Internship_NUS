@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!--    <style>div{border:solid red;}</style>-->
-    <title>New Photo</title>
+    <title>Edit Album</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </head>
   <body>
@@ -22,7 +22,7 @@
             </form>
           </div>
           <div class="col-auto my-auto">
-            <button type="button" class="btn bg-white text-color rounded-circle">TT</button>
+            <button type="button" class="btn bg-white text-color rounded-circle ">TT</button>
             <a href="#" class="btn" >Thai Tran</a>
           </div>
           <div class="col-auto my-auto">
@@ -45,13 +45,13 @@
           <div class="row bg-white p-3">
             <div class="container-fluid">
                 <div class="row font-weight-bold border-bottom pb-3 h5">
-                    New Photo
+                    Edit Album
                 </div>
                 <div class="row justify-content-between mt-3">
                     <div class="col-6">
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control w-75" id="title" placeholder="Photo Title">
+                            <input type="text" class="form-control col-11" id="title" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
                         </div>
                         <div class="form-group">
                             <label for="sharingmode">Sharing mode</label><br>
@@ -63,16 +63,20 @@
                     </div>
                     <div class="col-6 form-group">
                         <label for="description">Description</label>
-                        <textarea id="description" placeholder="Photo Description" class="form-control" rows="5"></textarea>
+                        <textarea id="description" class="form-control" rows="5" >Aliquam dictu nec massa ac consequat. Etiam digissim tincidunt tellus sed vestibulum. Sed vitae vestibulum purus. Curabitur malesuada libero in ribh pretium, sed malesuada nisi feugiat</textarea>
                     </div>
                 </div>
                 <div class="row mt-3 mx-1">
-                  <div class="form-group rounded uploader-hold">
-                    <input type="file" class="upload-photo rounded page" accept="image/*" />
-                  </div>
+                    <div class="col-auto form-group rounded uploader-hold background-avatar">
+                        <div class="row justify-content-end"><i class="fas fa-times btn"></i></div>
+                    </div>
+                    <div class="col-auto form-group rounded uploader-hold">
+                        <input type="file" class="upload-photo rounded page" accept="image/*" />
+                    </div>
                 </div>
                 <div class="row mt-3 mx-1">
-                  <button type="button"  class="btn btn-success ">Save</button>
+                    <button type="button"  class="btn btn-success ">Save</button>
+                    <button type="button"  class="btn btn-danger ml-5"><i class="far fa-trash-alt mr-1"></i>Delete</button>
                 </div>
             </div>
           </div>
@@ -80,7 +84,7 @@
         <div class="col"></div>
     </div>
 
-
+    <script src="https://kit.fontawesome.com/3dc3c39fce.js" crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/guestfeeds.css">
