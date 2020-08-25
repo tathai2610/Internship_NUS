@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :albums
   has_many :photos
 
+  has_many :votes, as: :voteable
+
   has_many :follower_follows, foreign_key: :followee_id, class_name: "Follow"
   has_many :followers, through: :follower_follows, source: :follower
 
