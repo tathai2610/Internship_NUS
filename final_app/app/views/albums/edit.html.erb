@@ -1,0 +1,5 @@
+<h4>Update new title for album with id <%= @album.id %>:</h4>
+<%= form_for @album do |f| %>
+   <%= f.text_field :title %>
+   <%= f.submit "Submit" %>
+<% end %>
