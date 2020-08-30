@@ -2,12 +2,19 @@ class AlbumsController < ApplicationController
 
   def edit
     @album = Album.find(params[:id])
-
   end
 
   def update
     @album = Album.find(params[:id])
-    @album.update(title: album_params)
+    @album.title = album_params
+    if @album.save
+      flash[:success] = "Update successfully"
+      render :edit
+    else
+      flash[:error] = @album.errors[:title]
+      render :edit
+    end
+
   end
 
   private

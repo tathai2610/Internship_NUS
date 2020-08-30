@@ -1,12 +1,31 @@
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
+<%= yield %>
+
 <h4>Update new title for album with id <%= @album.id %>:</h4>
 
-<div class="edit-album-title">
-  <%= form_with model: @album do |f| %>
-     <%= f.text_field :title %>
+  <%= form_with model: @album, :html => {:id => "edit-album-title" } do |f| %>
+     <%= f.text_field :title, placeholder: "New title ...", value: "" %>
      <%= f.submit "Save" %>
   <% end %>
-</div>
+
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+      $("#edit-album-title").validate({
+          rules: {
+              "album[title]": "required"
+          },
+          messages: {
+              "album[title]": "Please input new title"
+          }
+      })
+  });
+
+</script>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
