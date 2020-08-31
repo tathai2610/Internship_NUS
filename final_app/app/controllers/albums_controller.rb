@@ -9,10 +9,10 @@ class AlbumsController < ApplicationController
     @album.title = album_params
     if @album.save
       flash[:success] = "Update successfully"
-      render :edit
+      redirect_to action: :edit
     else
-      flash[:error] = @album.errors[:title]
-      render :edit
+      flash[:error] = @album.errors.full_messages[0]
+      redirect_to action: :edit
     end
 
   end

@@ -4,7 +4,7 @@ class Album < ApplicationRecord
 
   has_many :likes, as: :likeable
 
-  validates :title, presence: true, length: {maximum: 140, message: "Title is maximum 140 characters"}, length: {minimum: 10, message: "Title is minimum 10 characters"}
+  validates :title, presence: true, length: {maximum: 140, message: "Title is maximum 140 characters"}, length: {minimum: 10, message: " is minimum 10 characters"}
   validates :description, presence: true, length: {maximum: 300, message: "Description is maximum 300 characters"}
   validates :shared, inclusion: { in: [true, false]}
 

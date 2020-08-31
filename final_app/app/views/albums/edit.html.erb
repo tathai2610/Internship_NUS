@@ -1,15 +1,14 @@
 
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>"><%= value %></div>
-<% end %>
-
-<%= yield %>
 
 <h4>Update new title for album with id <%= @album.id %>:</h4>
 
   <%= form_with model: @album, :html => {:id => "edit-album-title" } do |f| %>
      <%= f.text_field :title, placeholder: "New title ...", value: "" %>
-     <%= f.submit "Save" %>
+     <%= f.submit "Update" %>
+  <% end %>
+
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= "#{value}" %></div>
   <% end %>
 
 
