@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_detail
-
     if @user.save
       UserMailer.with(user: @user).welcome_email.deliver_later
       flash[:success] = "User was successfully created."

@@ -3,85 +3,76 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!--    <style>div{border:solid red;}</style>-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<!--        <style>div{border:solid red;}</style>-->
     <title>Log in</title>
   </head>
   <body>
-    <div class="container-fluid navi">
-      <div class="container py-1">
-        <div class="row">
-          <div class="col-auto my-auto">
-            <a class="h5" href="#">Fotobook</a>
-          </div>
-          <div class="col w-100">
-            <form class="form-inline w-100">
-              <input class="form-control w-50" type="search" placeholder="Search Photo / Album">
+    <nav class="navbar navbar-expand-md navbar-dark avatar px-5">
+      <a class="navbar-brand font-weight-bold pl-lg-5" href="#">Fotobook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline mt-2 my-lg-0 w-100 col-lg-5 ">
+              <input class="form-control my-lg-0 w-100" type="search" placeholder="Search Photo / Album" aria-label="Search">
             </form>
-          </div>
-          <div class="col-auto my-auto">
-            <a href="#">Login</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="container page">
-        <div class="row justify-content-center">
-            <div class="col-auto h1 login"><strong>Fotobook Login</strong></div>
-        </div>
-    </div>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-4">
-          <div class="container-fluid border rounded-lg my-2">
-            <div class="row justify-content-center py-3">
-              <div class="col text-center">
-                <a href="#"><img src="../img/google.png"  alt="Google" class="icon rounded-circle"></a>
-              </div>
-              <div class="col text-center">
-                <a href="#"><img src="../img/facebook.png"  alt="Facebook" class="icon rounded-circle"></a>
-              </div>
-              <div class="col text-center">
-                <a href="#"><img src="../img/twitter.png"  alt="Twitter" class="icon rounded-circle"></a>
-              </div>
-            </div>
-          </div>
-        </div>
+            <ul class="navbar-nav col-lg-auto offset-lg-6 text-center">
+              <li class="nav-item active ">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+            </ul>
       </div>
-    </div>
-    <div class="container mt-3">
-      <div class="row justify-content-center">
-        <div class="col-4">
-          <div class="container-fluid login-form rounded-lg shadow pb-3 pt-3">
-            <div class="row justify-content-center ">
-              <div class="col-auto mt-4">
-                <img src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="user-img" id="user-img"/>
-              </div>
-            </div>
-            <div class="row justify-content-center mt-5">
-              <div class="col">
-                <form class="text-center">
-                  <input type="text" class="form-control p-3" placeholder="Email" autofocus>
-                  <input type="password" class="form-control " placeholder="Password" >
-                  <button type="button" class="btn my-3 px-4">Login</button>
-                </form>
-              </div>
-            </div>
-            <div class="row justify-content-center mt-2">
-              <a href="#" class="login">Forgot password?</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center mt-4">
-        <a href="#" class="login">Create an account</a>
-      </div>
-    </div>
+    </nav>
 
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/login.css">
+
+      <div class="h1 text-color font-weight-bold text-center mt-5">Fotobook Login</div>
+      <div class="container-fluid">
+        <div class="row justify-content-center my-2">
+            <div class="col-auto col-lg-3 login-box text-center">
+
+          <img src="../img/icons8-google-60.png" class="img-fluid rounded-circle m-1 mx-lg-3 "/>
+          <img src="../img/icons8-facebook-60.png" class="img-fluid rounded-circle m-1 mx-lg-3 "/>
+          <img src="../img/icons8-twitter-circled-60.png" class="img-fluid rounded-circle m-1 mx-lg-3 "/>
+
+            </div>
+        </div>
+          <div class="row justify-content-center">
+              <div class="col-auto col-lg-3 page box-shadow rounded mt-1">
+
+                  <div class="row justify-content-center my-4">
+                      <div class="col-auto"><img src="../img/photo.png" class="img-fluid rounded-circle" id="user-slash"/></i></div>
+                  </div>
+                  <div class="row justify-content-center">
+                      <div class="col-11">
+                          <input type="email" name="email" placeholder="Email" class="form-control pr-2"/>
+                          <input type="password" name="password" placeholder="Password" class="form-control pr-2"/>
+                      </div>
+                  </div>
+                  <div class="row justify-content-center my-3">
+                      <div class="col-auto">
+                        <button type="submit" class="btn avatar float-center px-4">Login</button>
+                      </div>
+                  </div>
+                  <div class="row justify-content-center mb-2">
+                      <div class="col-auto">
+                          <a class="text-color font-size text-decoration-none" href="">Forgot password?</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+           <div class="row justify-content-center mt-4">
+              <div class="col-auto">
+                  <a href="" class="text-color font-size text-decoration-none">Create an account</a>
+              </div>
+          </div>
+      </div>
+
+    <script src="https://kit.fontawesome.com/3dc3c39fce.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/guestfeeds.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

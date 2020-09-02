@@ -10,6 +10,10 @@ require("channels")
 
 require('jquery')
 
+ import 'bootstrap';
+ import './src/application.scss';
+ global.$ = jQuery;
+
 //= require jquery.validate
 //= require jquery.validate.additional-methods
 
