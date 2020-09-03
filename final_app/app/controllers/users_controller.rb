@@ -6,8 +6,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_detail
+    @user.id = '4'
     if @user.save
-      UserMailer.with(user: @user).welcome_email.deliver_later
+      MailerJob.perform_later @user
       flash[:success] = "User was successfully created."
       redirect_to action: :new
     else
