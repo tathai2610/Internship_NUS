@@ -2,37 +2,28 @@ $(document).ready(function() {
     $("img[title]").on({
         "click": function() {
             if ($("#photo-tab").hasClass("avatar")) {
-              var source = $(this).attr("src");
 
-              document.getElementById("modal-photo-title").innerHTML = $(this).attr("title")
-              document.getElementById("modal-photo-description").innerHTML = $(this).attr("desc")
+              var title = $(this).attr("title");
+              var source = $(this).attr("src");
+              var description = $(this).attr("desc");
+
               $("#modal-photo-body").attr("src", source);
-              $("#modal-photo").toggle();
+              document.getElementById("modal-photo-title").innerHTML = title
+              document.getElementById("modal-photo-description").innerHTML = description
+
             }
             else {
-              var title = $(this).parent().parent().parent().find("div[name='title']").html();
+              var title = $(this).attr("title");
+            //  var source = $(this).attr("src");
+              var description = $(this).attr("desc");
 
-              var description = $(this).parent().parent().parent().find("div[name='description']").html();
-              $("#modal-album-title").html(title);
-
-              $("#modal-album-description").html(description);
-              jQuery("#modal-album").modal("toggle");
+            //  $("#modal-album-body").attr("src", source);
+              document.getElementById("modal-album-title").innerHTML = title
+              document.getElementById("modal-album-description").innerHTML = description
             }
+
         }
     })
 
-    $("button[name='follow']").on({
-    "click": function() {
-      if ($(this).hasClass("follow")) {
-        $(this).removeClass("follow");
-        $(this).addClass("followed");
-        $(this).html("following");
-      }
-      else {
-        $(this).removeClass("followed");
-        $(this).addClass("follow");
-        $(this).html("follow");
-      }
-    }
+
   })
- })

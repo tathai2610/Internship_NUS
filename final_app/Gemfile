@@ -57,4 +57,4 @@ gem "jquery-validation-rails"
 
 gem 'sidekiq'
 
-gem 'redis'
+gem 'kaminari'
