@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :photos
-  resources :albums
-  resources :users, except: [:index,:destroy]
+
+  resources :users, except: [:index,:destroy] do
+    resources :photos
+    resources :albums
+  end
 
   root to: "home#guestfeed"
   get 'discover/photo', to: 'home#discover_photo'
